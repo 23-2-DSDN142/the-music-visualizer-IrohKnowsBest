@@ -1,4 +1,23 @@
 
+let rippleX = 500;
+let rippleY = 500;
+let rippleSize = 0;
+
+// let rippleArray = [];
+
+// class Ripple {
+//   constructor (x,y){
+// this.x = x,
+// this.y = y,
+// this.s = 0
+//   }
+//   draw(){
+//     this.s += 1
+//     circle(this.x, this.y, this.s);
+//   }
+// }
+// you have to somehow figure out a way for it to not continuously draw the samething over and over again in the same spot
+
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   colorMode(HSB,100);
@@ -8,28 +27,62 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   textSize(24);
 
 
+    background(60,30,60);
+    stroke("white");
+    strokeWeight(5);
+    noFill();
+    
+    // for (let i = 0; i < rippleArray.length; i++){
+    //   rippleArray[i].draw();
+    // }
+    
+    rippleSize += 1;
+    circle(rippleX, rippleY, rippleSize);
+    
+    // push();
+    // fill("white");
+    // strokeWeight(1);
+    // textSize(50)
+    // text("rippleX:" + rippleX,50,50);
+    // text("rippleY:" + rippleY,50,100);
+    
+    // pop();
+
+    if (rippleSize >= 1000){
+       rippleSize = 0
+    }
+
+// rippleArray.push(new Ripple(rippleX, rippleY));
+  }  
 
 
-let ringSize = drum+100;
-let vocalMap = map(vocal, 100, 0, 100, 10);
-let bassMap = map(bass,100,0, 20,100);
-let otherMap = map(bass,100,0, 30,80);
-let drumMap = map(bass,100,0, 90,10);
-let drumHeight= map(drum,100,0, ringSize/4, height);
-let bassHeight = map(bass,100,0,ringSize/4, height)
-let lineSize = 50
-let lineStart = 0
-let lineEnd = lineStart + lineSize
 
+// let ringSize = drum+100;
+// let vocalMap = map(vocal, 100, 0, 100, 10);
+// let bassMap = map(bass,100,0, 20,100);
+// let otherMap = map(bass,100,0, 30,80);
+// let drumMap = map(bass,100,0, 90,10);
+// let drumHeight= map(drum,100,0, ringSize/4, height);
+// let bassHeight = map(bass,100,0,ringSize/4, height)
+// let lineSize = 50
+// let lineStart = 0
+// let lineEnd = lineStart + lineSize
 
- 
-}
-
-
+// let circleSize = 25
+// let circlePosition = 15
 
 
 
 
+// ellipse(circlePosition,circlePosition,circleSize,circleSize)
+// ellipse(circlePosition+30,circlePosition,circleSize,circleSize)
+// ellipse(circlePosition+60,circlePosition,circleSize,circleSize)
+// ellipse(circlePosition+90,circlePosition,circleSize,circleSize)
+// ellipse(circlePosition+120,circlePosition,circleSize,circleSize)
+// ellipse(circlePosition+150,circlePosition,circleSize,circleSize)
+// ellipse(circlePosition+180,circlePosition,circleSize,circleSize)
+// ellipse(circlePosition+210,circlePosition,circleSize,circleSize)
+// ellipse(circlePosition+240,circlePosition,circleSize,circleSize)
 
 
 // noFill();
@@ -40,11 +93,11 @@ let lineEnd = lineStart + lineSize
 //   ellipse(width/2, height/2, vocal+250,vocal+150);
 //   ellipse(width/2, drumHeight, ringSize);
 
-//   stroke(bass,50,50);
+// stroke(bass,50,50);
 
 
- // line(lineStart, 480, lineEnd, 480);
-  // line(lineStart, 490, lineEnd, 490);
+//  line(lineStart, 480, lineEnd, 480);
+//   line(lineStart, 490, lineEnd, 490);
 
 //   for (let i=1; i <= vocalMap; i++){
 //  let lineStep = i*10;
@@ -89,8 +142,8 @@ let lineEnd = lineStart + lineSize
 //  for (let i=1; i <= bassMap; i++){
 //   let lineStep = i*10;
 //   line(lineStart+500, lineStep, lineEnd+500, lineStep);
-//   }
-
+//  }
+// }
 
 
   // let bar_spacing = height / 10;
@@ -127,3 +180,4 @@ let lineEnd = lineStart + lineSize
   //  textAlign(CENTER);
   //  textSize(vocal);
   //  text(words, width/2, height/3);
+
